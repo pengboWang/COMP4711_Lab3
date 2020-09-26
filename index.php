@@ -9,6 +9,19 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title></title>
     </head>
+    <style>
+        body{
+            border: 1px solid black;
+            text-align: center;
+            color:pink;
+            font-size:30px;
+            
+        }
+        p{
+            color:black;
+            font-size: 12px;
+        }
+    </style>
     <body>
         <?php
         
@@ -22,6 +35,7 @@ and open the template in the editor.
         $first->add_grade(65);
         $first->add_grade(75);
         $first->add_grade(55);
+        $first->add_status('status','Freshman');
         $students['j123'] = $first;
         
         $second = new Student();
@@ -33,6 +47,7 @@ and open the template in the editor.
         $second->add_grade(95);
         $second->add_grade(80);
         $second->add_grade(50);
+        $second->add_status('status','Junior');
         $students['a456'] = $second;
         
         $third = new Student();
@@ -42,9 +57,22 @@ and open the template in the editor.
         $third->add_email('work1','pengbo@bcit.ca');
         $third->add_email('work2','pengbo@physics.mit.edu');
         $third->add_grade(95);
-        $third->add_grade(80);
-        $third->add_grade(50);
+        $third->add_grade(95);
+        $third->add_grade(95);
+        $third->add_status('status','Senior');
         $students['b123'] = $third;
+        
+        $fourth = new Student();
+        $fourth->surname = "yunnie";
+        $fourth->first_name = "Lin";
+        $fourth->add_email('home','Linyunnie@braniacs.com');
+        $fourth->add_email('work1','Linyunnie@bcit.ca');
+        $fourth->add_email('work2','Linyunnie@physics.mit.edu');
+        $fourth->add_grade(95);
+        $fourth->add_grade(85);
+        $fourth->add_grade(90);
+        $fourth->add_status('status','Senior');
+        $students['d234'] = $fourth;
         
         ksort($students);
         foreach($students as $student)
